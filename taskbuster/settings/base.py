@@ -54,7 +54,12 @@ INSTALLED_APPS += (
     'allauth.socialaccount',
     # Login via Google
     'allauth.socialaccount.providers.google',
+    # Login via Twitter
+    'allauth.socialaccount.providers.twitter',
+    # TaskBuster apps
+    'taskbuster.apps.taskmanager',
 )
+
 SITE_ID = 2
 ACCOUNT_USERNAME_REQUIRED = False
 ACCOUNT_EMAIL_VERIFICATION = "none"
@@ -88,7 +93,8 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.i18n',
                 # Required by allauth template tags
-                'django.core.context_processors.request',
+                #'django.core.context_processors.request',
+                'django.template.context_processors.request',
             ],
         },
     },
